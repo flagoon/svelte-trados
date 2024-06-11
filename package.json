@@ -13,7 +13,10 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest --run",
-		"prepare": "husky"
+		"prepare": "husky",
+		"cf-export": "contentful space export --config contentful/export-config.json --management-token $CONTENTFUL_MANAGEMENT_TOKEN --space-id $CONTENTFUL_SPACE_ID",
+		"cf-generate": "cf-content-types-generator contentful/export.json --v10 --out src/types",
+		"echo": "echo $CONTENTFUL_MANAGEMENT_TOKEN"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.3.0",
@@ -26,6 +29,8 @@
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^7.0.0",
 		"autoprefixer": "^10.4.19",
+		"cf-content-types-generator": "^2.15.2",
+		"contentful-cli": "^3.3.2",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
@@ -43,6 +48,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"contentful": "^10.11.10",
 		"fp-ts": "^2.16.6"
 	}
 }
