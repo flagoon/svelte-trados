@@ -11,3 +11,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .netlify
 ctf-script.sh
+set_env_vars.sh
