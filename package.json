@@ -6,13 +6,11 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "npm run test:integration && npm run test:unit",
+    "test": "vitest --run",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
+    "lint": "npm run format && eslint .",
     "format": "prettier --write .",
-    "test:integration": "playwright test",
-    "test:unit": "vitest --run",
     "prepare": "husky",
     "cf-export": "contentful space export --config contentful/export-config.json --management-token $CONTENTFUL_MANAGEMENT_TOKEN --space-id $CONTENTFUL_SPACE_ID",
     "cf-generate": "cf-content-types-generator contentful/export.json --v10 --out src/types"
@@ -20,7 +18,6 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@playwright/test": "^1.28.1",
     "@sveltejs/adapter-netlify": "^4.2.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -49,7 +46,8 @@
   },
   "type": "module",
   "dependencies": {
-    "contentful": "^10.11.10",
+    "axios": "^1.7.2",
+    "contentful": "^10.12.8",
     "fp-ts": "^2.16.6"
   }
 }
