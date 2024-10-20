@@ -19,11 +19,6 @@ export type {
   TypeCarouselItemSkeleton,
 } from "./TypeCarouselItem";
 export type {
-  TypeFooterNavigation,
-  TypeFooterNavigationFields,
-  TypeFooterNavigationSkeleton,
-} from "./TypeFooterNavigation";
-export type {
   TypeHelpItem,
   TypeHelpItemFields,
   TypeHelpItemSkeleton,
