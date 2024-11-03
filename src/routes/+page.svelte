@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Button from "$lib/components/ui/button/button.svelte";
+
   let { data } = $props();
   const {
     page: { fields },
@@ -6,5 +8,5 @@
 </script>
 
 <h1>{"title"}</h1>
-<pre>{JSON.stringify(fields, undefined, 2)}</pre>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<Button class="ml-2" variant="destructive" size="sm">Click me</Button>
+<p>Visit <a href={fields.slug}>svelte.dev/docs/kit</a> to read the documentation</p>

@@ -22,3 +22,9 @@ export type TypeProductList<
   Modifiers extends ChainModifiers,
   Locales extends LocaleCode = LocaleCode,
 > = Entry<TypeProductListSkeleton, Modifiers, Locales>;
+
+export function isTypeProductList<Modifiers extends ChainModifiers, Locales extends LocaleCode>(
+  entry: Entry<EntrySkeletonType, Modifiers, Locales>,
+): entry is TypeProductList<Modifiers, Locales> {
+  return entry.sys.contentType.sys.id === "productList";
+}

@@ -8,4 +8,4 @@ else
     exit 1
 fi
 
-pnpm cf-content-types-generator -o contentful -s $CONTENTFUL_SPACE_ID  -t $CONTENTFUL_MANAGEMENT_TOKEN -X
+pnpm cf-content-types-generator -g -o src/@types/contentful -s $CONTENTFUL_SPACE_ID  -t $CONTENTFUL_MANAGEMENT_TOKEN -X

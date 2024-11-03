@@ -4,8 +4,7 @@ import {
   CONTENTFUL_SPACE_ID,
   CONTENTFUL_ENVIRONMENT,
 } from "$env/static/private";
-
-import { type TypePageSkeleton, type TypeBlogPostSkeleton } from "../../contentful";
+import type { TypeBlogPostSkeleton, TypePageSkeleton } from "$types/contentful";
 
 export const client = createClient({
   accessToken: CONTENTFUL_ACCESS_TOKEN,
@@ -22,10 +21,8 @@ export type EntriesWithSlug = TypePageSkeleton | TypeBlogPostSkeleton;
 export const getEntryBySlug =
   <T extends EntriesWithSlug>(contentType: T["contentTypeId"]) =>
   async (slug: string) => {
-    console.log("slug", slug);
-    const entries = await client.getEntries<T>({
+    const entries = await client.getEntries<EntriesWithSlug>({
       content_type: contentType,
-      // @ts-expect-error - slug is not a property of EntriesWithSlug
       "fields.slug": slug,
     });
 
