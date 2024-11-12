@@ -14,6 +14,7 @@ const config = {
     adapter: adapter(),
     alias: {
       "$types/*": "./src/@types",
+      "$constants/*": "./src/constants",
     },
   },
 };
